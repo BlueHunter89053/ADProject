@@ -11,7 +11,7 @@ public class ADProject {
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    frame.setSize(400, 400);
 	    projectGui gui = new projectGui();
-	    gui.setGui(frame);
+	    gui.setGui(frame)
 	    
 	    frame.setVisible(true);
     }
