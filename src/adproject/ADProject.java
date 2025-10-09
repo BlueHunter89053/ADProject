@@ -1,24 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package adproject;
+import adproject.Gui.projectGui;
+import javax.swing.*;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author joshua
- */
 public class ADProject {
-
-    /**
-     * @param args the command line arguments
-     */
+	
     public static void main(String[] args) {
-        // TODO code application logic here
-        String name = JOptionPane.showInputDialog("What is your name?");
-	System.out.println(name);
+	    JFrame frame = new JFrame("LOGIN");
+	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	    frame.setSize(400, 400);
+	    projectGui gui = new projectGui();
+	    gui.setGui(frame);
+	    
+	    frame.setVisible(true);
     }
     
 }
