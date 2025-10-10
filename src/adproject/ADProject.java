@@ -8,9 +8,10 @@ public class ADProject {
 	
     public static void main(String[] args) {
 	    JFrame frame = new JFrame("LOGIN");
+            frame.setSize(500, 200);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    frame.setSize(500, 200);
-	    projectGui gui = new projectGui();
+	    frame.setLocationRelativeTo(null);
+            projectGui gui = new projectGui();
 	    gui.setGui(frame);
 	    
 	    frame.setVisible(true);
