@@ -7,7 +7,7 @@ import javax.swing.*;
 public class projectGui {
     JButton btnLogin, btnClear, btnExit;
     JPanel pnlTop, pnlMiddle, pnlBottom;
-    JLabel lblName, lblPassword;
+    JLabel lblStudNum, lblPassword;
     JTextField tfName;
     JPasswordField pfPassword;
     JComboBox cboRole;
@@ -24,9 +24,9 @@ public class projectGui {
         pnlBottom = new JPanel();
         
         //Populating top JPanel
-        lblName = new JLabel("Name");
+        lblStudNum = new JLabel("Student Number");
         tfName = new JTextField(20);
-        pnlTop.add(lblName);
+        pnlTop.add(lblStudNum);
         pnlTop.add(tfName);
         
         //Populating the middle JPanel
@@ -44,12 +44,12 @@ public class projectGui {
         //Setting up the bottom JPanel
         btnLogin = new JButton("Login");
         btnClear = new JButton("Clear");
-        btnClear.addActionListener(e -> {
+        btnClear.addActionListener(e -> { //used lambda expression to add functionality to the button
             tfName.setText("");
             pfPassword.setText("");
         });
         btnExit = new JButton("Exit");
-        btnExit.addActionListener(e -> {
+        btnExit.addActionListener(e -> { //used lambda expression to add functionality to the button
             System.exit(0);
         });
         pnlBottom.add(btnLogin);
@@ -60,6 +60,25 @@ public class projectGui {
         frame.add(pnlMiddle);
         frame.add(pnlBottom);
     }
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == btnLogin) {
+            String roleSelected = (String) cboRole.getSelectedItem();
+            if ("Staff".equals(roleSelected)) {
+                
+            }
+        }
+    }
     
+    public void adminFrame() {
+        //this.setVisible(false);
+        
+        //Create new frame
+        JFrame adminFrame = new JFrame("Administrator");
+        adminFrame.setSize(400, 400);
+        adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+        
+    }
     
 }
