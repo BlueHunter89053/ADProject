@@ -25,7 +25,7 @@ public class projectGui {
         
         //Populating top JPanel
         lblStudNum = new JLabel("Student Number");
-        tfName = new JTextField(20);
+        tfName = new JTextField(14);
         pnlTop.add(lblStudNum);
         pnlTop.add(tfName);
         
@@ -56,6 +56,7 @@ public class projectGui {
         pnlBottom.add(btnClear);
         pnlBottom.add(btnExit);
         
+        //Add panels to frame
         frame.add(pnlTop);
         frame.add(pnlMiddle);
         frame.add(pnlBottom);
