@@ -65,7 +65,7 @@ public class projectGui {
         if (e.getSource() == btnLogin) {
             String roleSelected = (String) cboRole.getSelectedItem();
             if ("Staff".equals(roleSelected)) {
-                
+                adminFrame();
             }
         }
     }
@@ -77,6 +77,28 @@ public class projectGui {
         JFrame adminFrame = new JFrame("Administrator");
         adminFrame.setSize(400, 400);
         adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        adminFrame.setLocationRelativeTo(null);
+        
+        //Create tabbed pane
+        JTabbedPane tab = new JTabbedPane();
+        
+        //Create the course panel
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        
+        JPanel gridPanel = new JPanel(new GridLayout(2, 2, 10, 10));
+        
+        gridPanel.add(new JLabel("Course name:"));
+        gridPanel.add(new JTextField(15));
+        gridPanel.add(new JLabel("Course code:"));
+        gridPanel.add(new JTextField(15));
+        
+        JPanel flowPanel = new JPanel(new FlowLayout());
+        flowPanel.add(new JButton("Submit"));
+        flowPanel.add(new JButton("Clear"));
+        flowPanel.add(new JButton("Exit"));
+        
+        mainPanel.add(gridPanel);
+        mainPanel.add(flowPanel);
         
         
         
