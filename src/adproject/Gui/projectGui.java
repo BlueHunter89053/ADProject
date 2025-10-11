@@ -181,12 +181,14 @@ public class projectGui {
     }
 
     public void studentFrame() {
-        //Create new frame
+        //Setting up frame
         JFrame studentFrame = new JFrame("Student");
         studentFrame.setSize(400, 400);
         studentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         studentFrame.setLocationRelativeTo(null);
         studentFrame.setVisible(true);
-
+        
+        //Setting up JTable for students to view courses
+        
     }
 }
