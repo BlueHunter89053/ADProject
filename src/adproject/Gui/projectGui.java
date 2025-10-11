@@ -8,7 +8,7 @@ public class projectGui {
 
     JButton btnLogin, btnClear, btnExit;
     JPanel pnlTop, pnlMiddle, pnlBottom;
-    JLabel lblStudNum, lblPassword;
+    JLabel lblEmail, lblPassword;
     JTextField tfName;
     JPasswordField pfPassword;
     JComboBox cboRole;
@@ -17,57 +17,57 @@ public class projectGui {
     }
 
     public void setGui(JFrame frame) {
-        frame.setLayout(new GridLayout(3, 1));
-
-        //Setting up the JPanels
-        pnlTop = new JPanel();
-        pnlMiddle = new JPanel();
-        pnlBottom = new JPanel();
-
+        JPanel mainPanel0 = new JPanel(new BorderLayout());
+        //Creating panel objects
+        pnlTop = new JPanel(new GridLayout(3, 2, 5, 5));
+        pnlBottom = new JPanel(new FlowLayout());
         //Populating top JPanel
-        lblStudNum = new JLabel("Student Number");
+        lblEmail = new JLabel("Email:");
         tfName = new JTextField(14);
-        pnlTop.add(lblStudNum);
+        pnlTop.add(lblEmail);
         pnlTop.add(tfName);
-
         //Populating the middle JPanel
-        lblPassword = new JLabel("Password");
+        lblPassword = new JLabel("Password:");
         pfPassword = new JPasswordField(10);
-        pnlMiddle.add(lblPassword);
-        pnlMiddle.add(pfPassword);
-
+        pnlTop.add(lblPassword);
+        pnlTop.add(pfPassword);
         //Setting up JComboBox
-        String[] roles = {"--Select--", "Student", "Staff"};
+        JLabel lblRole = new JLabel("Role:");
+        String[] roles = {"--Select--", "Student", "Admin"};
         cboRole = new JComboBox<>(roles);
         cboRole.setPreferredSize(new Dimension(80, 25));
-        pnlMiddle.add(cboRole);
-
+        pnlTop.add(lblRole);
+        pnlTop.add(cboRole);
         //Setting up the bottom JPanel
         btnLogin = new JButton("Login");
-        btnLogin.addActionListener(e -> {
+        btnLogin.addActionListener((ActionEvent e) -> { //Used lambda expression to add functionality login button
             String roleSelected = (String) cboRole.getSelectedItem();
             if ("Staff".equals(roleSelected)) {
                 frame.setVisible(false);
                 adminFrame();
+            } else {
+                frame.setVisible(false);
+                studentFrame();
             }
         });
         btnClear = new JButton("Clear");
-        btnClear.addActionListener(e -> { //used lambda expression to add functionality to the button
+        btnClear.addActionListener(e -> { //used lambda expression to add functionality to clear button
             tfName.setText("");
             pfPassword.setText("");
         });
         btnExit = new JButton("Exit");
-        btnExit.addActionListener(e -> { //used lambda expression to add functionality to the button
+        btnExit.addActionListener(e -> { //used lambda expression to add functionality to exit button
             System.exit(0);
         });
+        //Adding components to bottom panel
         pnlBottom.add(btnLogin);
         pnlBottom.add(btnClear);
         pnlBottom.add(btnExit);
-
+        //Add panels to main panel
+        mainPanel0.add(pnlTop, BorderLayout.CENTER);
+        mainPanel0.add(pnlBottom, BorderLayout.SOUTH);
         //Add panels to frame
-        frame.add(pnlTop);
-        frame.add(pnlMiddle);
-        frame.add(pnlBottom);
+        frame.add(mainPanel0);
     }
 
     public void adminFrame() {
@@ -179,14 +179,14 @@ public class projectGui {
         //Make frame visible
         adminFrame.setVisible(true);
     }
-    
+
     public void studentFrame() {
         //Create new frame
-        JFrame adminFrame = new JFrame("Administrator");
-        adminFrame.setSize(400, 400);
-        adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        adminFrame.setLocationRelativeTo(null);
-        
-        
+        JFrame studentFrame = new JFrame("Student");
+        studentFrame.setSize(400, 400);
+        studentFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        studentFrame.setLocationRelativeTo(null);
+        studentFrame.setVisible(true);
+
     }
 }
