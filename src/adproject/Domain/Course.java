@@ -1,13 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package adproject.Domain;
 
-/**
- *
- * @author Albert
- */
 public class Course {
-	
+    public String Name, Sname, Email;
+    public int StudNum;
+
+    public Course() {
+
+    }
+    
+    //Setters
+    public void setName() {
+        this.Name = Name;
+    }
+    public void setSname() {
+        this.Sname = Sname;
+    }
+    public void setEmail() {
+        this.Email = Email;
+    }
+    public void setStudNum() {
+        this.StudNum = StudNum;
+    }
+    
+    //Getters
+    public String setName(String Name) {
+        return Name;
+    }
+    public String setSname(String Sname) {
+        return Sname;
+    }
+    
 }
