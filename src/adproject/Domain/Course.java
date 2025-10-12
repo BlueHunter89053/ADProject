@@ -1,33 +1,24 @@
 package adproject.Domain;
 
 public class Course {
-    public String Name, Sname, Email;
-    public int StudNum;
+    public String CourseName, CourseCode;
 
     public Course() {
 
     }
     
     //Setters
-    public void setName() {
-        this.Name = Name;
+    public void setCourseName() {
+        this.CourseName = CourseName;
     }
-    public void setSname() {
-        this.Sname = Sname;
+    public void setCourseCode() {
+        this.CourseCode = CourseCode;
     }
-    public void setEmail() {
-        this.Email = Email;
-    }
-    public void setStudNum() {
-        this.StudNum = StudNum;
-    }
-    
     //Getters
-    public String setName(String Name) {
-        return Name;
+    public String getCourseName(String CourseName) {
+        return CourseName;
     }
-    public String setSname(String Sname) {
-        return Sname;
+    public String getCourseCode(String CourseCode) {
+        return CourseCode;
     }
-    
 }
