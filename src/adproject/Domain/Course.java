@@ -15,7 +15,6 @@ public class Course {
         this.CourseCode = CourseCode;
     }
     //Getters
-<<<<<<< Updated upstream
     public String getCourseName(String CourseName) {
         return CourseName;
     }
@@ -23,18 +22,3 @@ public class Course {
         return CourseCode;
     }
 }
-=======
-    public String getName(String Name) {
-        return Name;
-    }
-    public String getSname(String Sname) {
-        return Sname;
-    }
-    public String getEmail(String Email) {
-        return Email;
-    }
-    public int getStudNum(int StudNum) {
-        return StudNum;
-    }
-}
->>>>>>> Stashed changes
