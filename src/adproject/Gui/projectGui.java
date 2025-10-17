@@ -42,10 +42,10 @@ public class projectGui {
         btnLogin = new JButton("Login");
         btnLogin.addActionListener((ActionEvent e) -> { //Used lambda expression to add functionality login button
             String roleSelected = (String) cboRole.getSelectedItem();
-            if ("Staff".equals(roleSelected)) {
+            if ("Admin".equals(roleSelected)) {
                 frame.setVisible(false);
                 adminFrame();
-            } else {
+            } else if ("Student".equals(roleSelected)){
                 frame.setVisible(false);
                 studentFrame();
             }
